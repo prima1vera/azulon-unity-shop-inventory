@@ -488,6 +488,7 @@ GameObject:
   - component: {fileID: 252252957}
   - component: {fileID: 252252959}
   - component: {fileID: 252252958}
+  - component: {fileID: 252252960}
   m_Layer: 5
   m_Name: InventoryPanel
   m_TagString: Untagged
@@ -553,6 +554,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252252956}
   m_CullTransparentMesh: 1
+--- !u!114 &252252960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252252956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155d1841b7f66cf43a2aa817d4cab979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryItemPrefab: {fileID: 1102791397983625099, guid: 9466efce36411da40a51c044e0833f21, type: 3}
+  inventoryContainer: {fileID: 784371274}
+  inventoryManager: {fileID: 632938818}
 --- !u!1 &418555442
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.16470589}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1161,6 +1177,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630290034}
   m_CullTransparentMesh: 1
+--- !u!1 &632938817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 632938819}
+  - component: {fileID: 632938818}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &632938818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632938817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac645c50158fce546b9ef653f268609b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &632938819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632938817}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 406.82596, y: 266.31662, z: -3.3473208}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &633331000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1608,7 +1668,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286906916}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 371.93115, y: 263.6424, z: -3.2460153}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2090,8 +2150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a5b12ae11ea4f48b402a4ea043e826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  playerMoney: 100
+  inventory: {fileID: 632938818}
   shopDatabase: {fileID: 11400000, guid: 49abbde419d43ca488ae8c7639cbf56c, type: 2}
 --- !u!4 &1751242594
 Transform:
@@ -2315,6 +2374,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 418555445}
   - {fileID: 573011351}
-  - {fileID: 2120013546}
-  - {fileID: 1286906918}
   - {fileID: 1751242594}
+  - {fileID: 632938819}
+  - {fileID: 1286906918}
+  - {fileID: 2120013546}

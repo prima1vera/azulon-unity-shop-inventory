@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
-    public Inventory inventory;
-    public int playerMoney = 100;
+    public InventoryManager inventory;
+    public decimal playerMoney = 100;
     public ShopDatabase shopDatabase;
 
     public void TryPurchaseItem(ShopItem item)

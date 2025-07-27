@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class InventoryManager : MonoBehaviour
 {
     public List<InventoryItem> items = new List<InventoryItem>();
 
@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
         items.Add(new InventoryItem(shopItem));
     }
 
-    public List<InventoryItem> GetItems()
+    public List<InventoryItem> GetInventoryItems()
     {
         return items;
     }

@@ -11,15 +11,15 @@ public class UIManager : MonoBehaviour
     {
         shopPanel.SetActive(true);
         inventoryPanel.SetActive(false);
-
-        // ShopUI shopUI = shopPanel.GetComponent<ShopUI>();
-        // shopUI.ShowShop();
     }
 
     public void ShowInventory()
     {
         shopPanel.SetActive(false);
         inventoryPanel.SetActive(true);
+
+        InventoryUI inventoryUI = inventoryPanel.GetComponent<InventoryUI>();
+        inventoryUI.ShowInventory();
     }
 }
 

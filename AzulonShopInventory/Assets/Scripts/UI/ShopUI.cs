@@ -7,8 +7,7 @@ public class ShopUI : MonoBehaviour
     [Header("UI References")]
     public GameObject shopItemPrefab;
     public Transform shopItemContainer;
-
-    [SerializeField] private ShopManager shopManager;
+    public ShopManager shopManager;
 
     void Start()
     {
@@ -17,8 +16,8 @@ public class ShopUI : MonoBehaviour
 
     public void OnBuyButtonClicked(ShopItem item)
     {
-        Debug.Log("Покупаем: " + item.itemName);
-        FindObjectOfType<ShopManager>().TryPurchaseItem(item);
+        Debug.Log("Buy: " + item.itemName);
+        shopManager.TryPurchaseItem(item);
     }
 
     public void PopulateShop(List<ShopItem> items)
