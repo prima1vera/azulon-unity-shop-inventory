@@ -9,6 +9,13 @@ public class ShopManager : MonoBehaviour
     public float playerMoney = 100;
     public ShopDatabase shopDatabase;
 
+    public TextMeshProUGUI moneyText;
+
+    private void Start()
+    {
+        UpdateMoneyUI();
+    }
+
     public void TryPurchaseItem(ShopItem item)
     {
         if (playerMoney >= item.price)
@@ -16,6 +23,7 @@ public class ShopManager : MonoBehaviour
             playerMoney -= item.price;
 
             inventory.AddItem(item);
+            UpdateMoneyUI();
 
             FindObjectOfType<UIManager>().ShowMessage($"Purchased {item.itemName} for ${item.price}!");
             Debug.Log($"Purchased {item.itemName} for ${item.price}. Remaining money: ${playerMoney}");
@@ -30,6 +38,13 @@ public class ShopManager : MonoBehaviour
     public List<ShopItem> GetShopItems()
     {
         return shopDatabase.items;
+    }
+    private void UpdateMoneyUI()
+    {
+        if (moneyText != null)
+        {
+            moneyText.text = $"Money: ${playerMoney}";
+        }
     }
 
     void Awake()
@@ -59,7 +74,8 @@ public class ShopManager : MonoBehaviour
     {
         playerMoney = 100;
         inventory.items.Clear();
+        UpdateMoneyUI();
 
-        Debug.Log("Shop and inventory reset.");
+        Debug.Log("Game Reset: Inventory cleared and money restored.");
     }
 }

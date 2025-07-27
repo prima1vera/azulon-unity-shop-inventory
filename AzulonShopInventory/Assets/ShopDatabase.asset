@@ -24,47 +24,47 @@ MonoBehaviour:
     description: Restoed 50 health when used
     price: 30
   - id: 3
+    itemName: Cherry
+    icon: {fileID: 249312610, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
+    description: A ripe pair of cherries
+    price: 10
+  - id: 4
+    itemName: Coin
+    icon: {fileID: -2133284963, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
+    description: A lucky gold coin
+    price: 40
+  - id: 5
+    itemName: Shield
+    icon: {fileID: -1668745739, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
+    description: A sturdy wooden shield for protection
+    price: 50
+  - id: 6
+    itemName: Carrot
+    icon: {fileID: 236599489, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
+    description: A fresh orange carrot
+    price: 10
+  - id: 7
+    itemName: Ring
+    icon: {fileID: -2052335077, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
+    description: A magical ring with green gem
+    price: 100
+  - id: 8
+    itemName: Arrow
+    icon: {fileID: -1754000387, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
+    description: An iron arrow
+    price: 25
+  - id: 9
+    itemName: Hat
+    icon: {fileID: 1746750374, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
+    description: A hat that boosts magical power
+    price: 50
+  - id: 10
     itemName: Apple
     icon: {fileID: 1252016705, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
     description: A long description of the apple so we can see its proper wrapping
       and rendering. Keep writing the text for this incredible apple that will completely
       restore your health. This is the best red apple you have ever seen. Good luck!
     price: 10
-  - id: 4
-    itemName: Cherry
-    icon: {fileID: 249312610, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
-    description: A ripe pair of cherries
-    price: 10
-  - id: 5
-    itemName: Coin
-    icon: {fileID: -2133284963, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
-    description: A lucky gold coin
-    price: 40
-  - id: 6
-    itemName: Shield
-    icon: {fileID: -1668745739, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
-    description: A sturdy wooden shield for protection
-    price: 50
-  - id: 7
-    itemName: Carrot
-    icon: {fileID: 236599489, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
-    description: A fresh orange carrot
-    price: 10
-  - id: 8
-    itemName: Ring
-    icon: {fileID: -2052335077, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
-    description: A magical ring with green gem
-    price: 100
-  - id: 9
-    itemName: Arrow
-    icon: {fileID: -1754000387, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
-    description: An iron arrow
-    price: 25
-  - id: 10
-    itemName: Hat
-    icon: {fileID: 1746750374, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
-    description: A hat that boosts magical power
-    price: 50
   - id: 11
     itemName: Pineapple
     icon: {fileID: -804118671, guid: 9b214c1a6ec8c47408f105887fb218a3, type: 3}
