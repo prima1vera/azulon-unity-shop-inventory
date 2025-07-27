@@ -14,4 +14,47 @@ public class InventoryManager : MonoBehaviour
     {
         return items;
     }
+
+    [System.Serializable]
+    class InventorySaveData
+    {
+        public List<string> itemIDs = new List<string>();
+    }
+
+    public void SaveInventory()
+    {
+        InventorySaveData saveData = new InventorySaveData();
+
+        foreach (var item in items)
+        {
+            saveData.itemIDs.Add(item.item.id);
+        }
+
+        string json = JsonUtility.ToJson(saveData);
+        PlayerPrefs.SetString("InventoryData", json);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadInventory(List<ShopItem> allShopItems)
+    {
+        items.Clear();
+
+        string json = PlayerPrefs.GetString("InventoryData", "");
+        if (string.IsNullOrEmpty(json)) return;
+
+        InventorySaveData saveData = JsonUtility.FromJson<InventorySaveData>(json);
+
+        foreach (string id in saveData.itemIDs)
+        {
+            ShopItem matchedItem = allShopItems.Find(item => item.id == id);
+            if (matchedItem != null)
+            {
+                items.Add(new InventoryItem(matchedItem));
+            }
+            else
+            {
+                Debug.LogWarning($"Item with ID {id} not found in ShopDatabase.");
+            }
+        }
+    }
 }

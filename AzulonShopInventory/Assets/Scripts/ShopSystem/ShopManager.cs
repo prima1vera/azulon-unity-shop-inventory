@@ -6,7 +6,7 @@ using UnityEngine;
 public class ShopManager : MonoBehaviour
 {
     public InventoryManager inventory;
-    public decimal playerMoney = 100;
+    public float playerMoney = 100;
     public ShopDatabase shopDatabase;
 
     public void TryPurchaseItem(ShopItem item)
@@ -30,5 +30,28 @@ public class ShopManager : MonoBehaviour
     public List<ShopItem> GetShopItems()
     {
         return shopDatabase.items;
+    }
+
+    void Awake()
+    {
+        LoadPlayerMoney();
+        inventory.LoadInventory(shopDatabase.items);
+    }
+
+    void OnApplicationQuit()
+    {
+        SavePlayerMoney();
+        inventory.SaveInventory();
+    }
+
+    public void SavePlayerMoney()
+    {
+        PlayerPrefs.SetFloat("PlayerMoney", (float)playerMoney);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadPlayerMoney()
+    {
+        playerMoney = PlayerPrefs.GetFloat("PlayerMoney", 100f);
     }
 }
