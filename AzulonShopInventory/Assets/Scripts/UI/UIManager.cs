@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject shopPanel;
+    public GameObject inventoryPanel;
+
+    public void ShowShop()
     {
-        
+        shopPanel.SetActive(true);
+        inventoryPanel.SetActive(false);
+
+        // ShopUI shopUI = shopPanel.GetComponent<ShopUI>();
+        // shopUI.ShowShop();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShowInventory()
     {
-        
+        shopPanel.SetActive(false);
+        inventoryPanel.SetActive(true);
     }
 }
+
+
