@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class StateManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static GameState CurrentState { get; private set; }
 
-    // Update is called once per frame
-    void Update()
+    public static void SetState(GameState newState)
     {
-        
+        CurrentState = newState;
+        Debug.Log("State changed to: " + CurrentState);
     }
 }
+

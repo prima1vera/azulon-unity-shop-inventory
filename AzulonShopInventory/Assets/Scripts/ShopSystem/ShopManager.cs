@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 
 public class ShopManager : MonoBehaviour
@@ -17,10 +17,12 @@ public class ShopManager : MonoBehaviour
 
             inventory.AddItem(item);
 
+            FindObjectOfType<UIManager>().ShowMessage($"Purchased {item.itemName} for ${item.price}!");
             Debug.Log($"Purchased {item.itemName} for ${item.price}. Remaining money: ${playerMoney}");
         }
         else
         {
+            FindObjectOfType<UIManager>().ShowMessage("Not enough money!");
             Debug.LogWarning($"Not enough money to purchase {item.itemName}");
         }
     }
