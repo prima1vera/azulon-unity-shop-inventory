@@ -7,8 +7,8 @@ public class UIManager : MonoBehaviour
 {
     public GameObject shopPanel;
     public GameObject inventoryPanel;
-
     public TextMeshProUGUI feedbackText;
+    public ShopManager shopManager;
 
     public void ShowShop()
     {
@@ -38,6 +38,14 @@ public class UIManager : MonoBehaviour
     void HideMessage()
     {
         feedbackText.gameObject.SetActive(false);
+    }
+
+    public void ResetGame()
+    {
+        shopManager.ResetShop();
+
+        shopPanel.GetComponent<ShopUI>().PopulateShop(shopManager.GetShopItems());
+        inventoryPanel.GetComponent<InventoryUI>().ShowInventory();
     }
 }
 

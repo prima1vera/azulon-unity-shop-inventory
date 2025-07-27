@@ -54,4 +54,12 @@ public class ShopManager : MonoBehaviour
     {
         playerMoney = PlayerPrefs.GetFloat("PlayerMoney", 100f);
     }
+
+    public void ResetShop()
+    {
+        playerMoney = 100;
+        inventory.items.Clear();
+
+        Debug.Log("Shop and inventory reset.");
+    }
 }
